@@ -94,3 +94,15 @@ for row in cursor:
 
 print("Operation done successfully")
 conn.close()
+
+
+"""
+delete records
+"""
+conn = sqlite3.connect('test.db')
+print("Opened database successfully")
+
+conn.execute("DELETE FROM COMPANY WHERE SALARY = 25000.00 AND ID = 1")
+conn.commit
+print("Deleleted records successfully")
+conn.close()
